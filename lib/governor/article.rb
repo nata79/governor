@@ -2,6 +2,9 @@ module Governor
   # Include this module into any class that will represent a blog article
   # post.
   module Article
+    
+    attr_accessible :title, :description, :post, :format
+    
     def self.included(base) #:nodoc:
       base.belongs_to :author, :polymorphic => true
       base.validates_presence_of :author, :title, :post
